@@ -1,16 +1,19 @@
-//@prepros-append extras/jquery.min.js
-//@prepros-append extras/popper.min.js
-//@prepros-append extras/bootstrap.min.js
-//@prepros-append extras/aos.min.js
-//@prepros-append extras/scrollax.min.js
-//@prepros-append extras/animsition.min.js
-//@prepros-append extras/owl.carousel.min.js
-//@prepros-append extras/hoverIntent.js
-//@prepros-append extras/superfish.min.js
+        const progress = document.querySelector('.progress')
+        const percentage = document.querySelector('.progress span')
 
-//@prepros-append extras/jquery.animateNumber.min.js
+        let per = 0;
+        function progressLoad(){
+            if(per>=80){
+                progress.style.width = `80%`;
+                percentage.innerHTML = "80%"
 
-//@prepros-append extras/jquery.waypoints.min.js
+            }else{
+                progress.style.width = `${per}%`;
+                percentage.innerHTML = `${per}%`;
 
-//@prepros-append extras/jquery.fancybox.min.js
+            }
+            per++
 
+        }
+
+        setInterval(progressLoad,90)
